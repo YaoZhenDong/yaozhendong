@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<script src="http://api.map.baidu.com/components?ak=RxICxzPjHG48oUDsnfbB5wHQK30eN2qk&v=1.0"></script>
+	<title>搜索附近</title>
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;}
+		#golist {display: none;}
+		@media (max-device-width: 800px){#golist{display: block!important;}}
+	</style>
+</head>
+<body>
+    <input type="text" id="texts" value="">
+	<a id="golist" href="../demolist.htm">返回demo列表页</a>
+    <lbs-nearby enable-geo="true" city="北京" num="5" query="" radius="5000" type="list" id="lbs"></lbs-nearby>
+
+</body>
+</html>
+<script type="text/javascript">
+
+	var texts=document.getElementById('texts');
+	texts.onblur=function(){
+		var value=texts.value;
+	var lbs=document.getElementById("lbs");
+	lbs.setAttribute("query",value)
+	}
+	
+	
+	
+</script>
